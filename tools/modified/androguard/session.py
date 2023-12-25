@@ -1,12 +1,12 @@
 import hashlib
 import collections
 
-from tools.modified.androguard.core import androconf
-from tools.modified.androguard.core.bytecodes.apk import *
-from tools.modified.androguard.core.bytecodes.dvm import *
-from tools.modified.androguard.core.analysis.analysis import *
-from tools.modified.androguard.decompiler.decompiler import *
-from tools.modified.androguard.misc import save_session, load_session
+from androguard.core import androconf
+from androguard.core.bytecodes.apk import *
+from androguard.core.bytecodes.dvm import *
+from androguard.core.analysis.analysis import *
+from androguard.decompiler.decompiler import *
+from androguard.misc import save_session, load_session
 
 class Session(object):
 
