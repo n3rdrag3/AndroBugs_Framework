@@ -171,7 +171,7 @@ class DvMethod(object):
         return self.ast
 
     def show_source(self):
-        print self.get_source()
+        print(self.get_source())
 
     def get_source(self):
         if self.writer:
@@ -366,7 +366,7 @@ class DvClass(object):
         return source
 
     def show_source(self):
-        print self.get_source()
+        print(self.get_source())
 
     def __repr__(self):
         if not self.subclasses:
