@@ -23,7 +23,7 @@ from tools.modified.androguard.util import read
 
 from tools.modified.androguard.core.resources import public
 
-from io import StringIO
+from io import StringIO, BytesIO
 from struct import pack, unpack
 from xml.sax.saxutils import escape
 from zlib import crc32
@@ -163,8 +163,8 @@ class APK(object):
         self.permissions = []
         self.declared_permissions = {}
         self.valid_apk = False
-		
-		#Added by AndroBugs
+        
+        #Added by AndroBugs
         self.security = {}
 
         self.files = {}
@@ -183,10 +183,10 @@ class APK(object):
             self.zip = ChilkatZip(self.__raw)
         elif zipmodule == 2:
             from tools.modified.androguard.patch import zipfile
-            self.zip = zipfile.ZipFile(StringIO(self.__raw), mode=mode)
+            self.zip = zipfile.ZipFile(BytesIO(self.__raw), mode=mode)
         else:
             import zipfile
-            self.zip = zipfile.ZipFile(StringIO(self.__raw), mode=mode)
+            self.zip = zipfile.ZipFile(BytesIO(self.__raw), mode=mode)
 
         for i in self.zip.namelist():
             if i == "AndroidManifest.xml":
@@ -199,7 +199,7 @@ class APK(object):
                 if self.xml[i] != None:
                     self.package = self.xml[i].documentElement.getAttribute("package")
 
-					#Added by AndroBugs
+                    #Added by AndroBugs
                     self.security["SharedUserId"] = self.xml[i].documentElement.getAttributeNS(NS_ANDROID_URI, "sharedUserId")
 
                     self.androidversion["Code"] = self.xml[i].documentElement.getAttributeNS(NS_ANDROID_URI, "versionCode")
@@ -775,7 +775,7 @@ class APK(object):
         """
             Return a certificate object by giving the name in the apk file
         """
-		#Added by AndroBugs - Comment only
+        #Added by AndroBugs - Comment only
         #Install module and download link: http://www.chilkatsoft.com/installPythonLinux.asp
         #Docs: http://www.chilkatsoft.com/refdoc/pythonCkCertRef.html
         #DO NOT use this method. 'LoadFromBinary2' is now an unsolved issue: http://code.google.com/p/androguard/issues/detail?id=120
