@@ -18,7 +18,7 @@ import traceback
 import random
 import argparse
 from zipfile import BadZipfile
-from ConfigParser import SafeConfigParser
+from configparser import SafeConfigParser
 import platform
 import imp
 import sys
