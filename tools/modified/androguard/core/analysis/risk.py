@@ -763,7 +763,7 @@ class FuzzyRisk(object):
 
 
       for v in sorted(score_order_sign, key=lambda x : score_order_sign[x], reverse=True):
-          print v.get_name(), v.get_class_name(), v.get_descriptor(), v.get_length(), score_order_sign[ v ]
+          print(v.get_name(), v.get_class_name(), v.get_descriptor(), v.get_length(), score_order_sign[ v ])
 
       ##########################
 
@@ -832,7 +832,7 @@ class FuzzyRisk(object):
           except KeyError:
               pass
 
-      print length, android_entropy, java_entropy, val_permissions
+      print(length, android_entropy, java_entropy, val_permissions)
 
       output_values = {"output_method_one_score" : 0.0}
       input_val = {}
@@ -1029,7 +1029,7 @@ class MethodScore(object):
             except KeyError:
                 pass
 
-        print length, matches, android_entropy, java_entropy, similarity_matches, val_permissions
+        print(length, matches, android_entropy, java_entropy, similarity_matches, val_permissions)
 
         output_values = {"output_method_score" : 0.0}
         input_val = {}
