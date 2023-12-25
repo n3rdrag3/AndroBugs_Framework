@@ -3,6 +3,20 @@
 AndroBugs Framework is an Android vulnerability analysis system that helps developers or hackers find potential security vulnerabilities in Android applications. 
 No splendid GUI interface, but the most efficient (less than 2 minutes per scan in average) and more accurate.
 
+
+### Required packages
+
+In order to use the framework with Python3 the following packages are required:
+```
+androguard
+configparser
+```
+
+#### Changelog ####
+
+25 December 2023
+* Refactored the entire project for Python3 compatibility
+
 Version: 1.0.0
 
 ####Features:####
