@@ -1671,7 +1671,7 @@ class ARSCParser(object):
     def get_resource_dimen(self, ate):
         try:
             return [ate.get_value(), "%s%s" % (complexToFloat(ate.key.get_data()), DIMENSION_UNITS[ate.key.get_data() & COMPLEX_UNIT_MASK])]
-        except Exception, why:
+        except(Exception, why):
             androconf.warning(why.__str__())
             return [ate.get_value(), ate.key.get_data()]
 
