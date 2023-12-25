@@ -1,8 +1,8 @@
 from PySide import QtCore, QtGui
-from tools.modified.androguard.core import androconf
-from tools.modified.androguard.gui.helpers import class2func, method2func, classdot2func, classdot2class, proto2methodprotofunc
-from tools.modified.androguard.gui.renamewindow import RenameDialog
-from tools.modified.androguard.gui.xrefwindow import XrefDialogMethod, XrefDialogField
+from androguard.core import androconf
+from androguard.gui.helpers import class2func, method2func, classdot2func, classdot2class, proto2methodprotofunc
+from androguard.gui.renamewindow import RenameDialog
+from androguard.gui.xrefwindow import XrefDialogMethod, XrefDialogField
 
 PYGMENTS = True
 try:
