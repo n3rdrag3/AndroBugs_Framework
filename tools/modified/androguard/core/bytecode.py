@@ -74,7 +74,7 @@ def _Print(name, arg):
     elif isinstance(arg, SVs):
         buff += arg.get_value().__str__()
 
-    print buff
+    print(buff)
 
 
 def PrettyShowEx(exceptions):
@@ -616,7 +616,7 @@ def object_to_str(obj):
     elif obj == None:
         return ""
     else:
-        #print type(obj), obj
+        #print(type(obj), obj)
         return obj.get_raw()
 
 class MethodBC(object):
