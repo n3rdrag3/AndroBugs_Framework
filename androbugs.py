@@ -1,10 +1,10 @@
 #-*- coding: utf-8 -*-
 
 from __future__ import division
-from androguard.core.bytecodes import apk
-from androguard.core.bytecodes import dvm
-from androguard.core.analysis import analysis
-from androguard.core import bytecode
+from tools.modified.androguard.core.bytecodes import apk
+from tools.modified.androguard.core.bytecodes import dvm
+from tools.modified.androguard.core.analysis import analysis
+from tools.modified.androguard.core import bytecode
 import uuid
 import os
 import re
