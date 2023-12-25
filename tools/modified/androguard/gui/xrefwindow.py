@@ -1,6 +1,6 @@
 from PySide import QtCore, QtGui
-from tools.modified.androguard.core import androconf
-from tools.modified.androguard.gui.helpers import display2classmethod, class2func, classmethod2display, method2func
+from androguard.core import androconf
+from androguard.gui.helpers import display2classmethod, class2func, classmethod2display, method2func
 
 class XrefDialogClass(QtGui.QDialog):
     '''Dialog holding our Xref listview.
