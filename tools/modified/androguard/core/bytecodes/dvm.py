@@ -6195,7 +6195,7 @@ class LinearSweepAlgorithm(object):
               try:
                 obj = get_extented_instruction(cm, op_value, insn[idx:])
                 classic_instruction = False
-              except struct.error, why:
+              except(struct.error, why):
                 warning("error while decoding instruction ..." + why.__str__())
 
             # optimized instructions ?
