@@ -3535,13 +3535,13 @@ def get_hash_scanning(writer) :
 	# signature = hash(package_name(default="") + "-" + file_sha256(default="") + "-" + timestamp_long + "-" + random_number_length8)
 	# use "-" because aaa-bbb.com is not a valid domain name
 	tmp_original = writer.getInf("package_name", "pkg") + "-" + writer.getInf("file_sha256", "sha256") + "-" + str(time.time()) + "-" + str(random.randrange(10000000, 99999999))
-	tmp_hash = hashlib.sha512(tmp_original).hexdigest()
+	tmp_hash = hashlib.sha512(tmp_original.encode()).hexdigest()
 	return tmp_hash
 
 def get_hash_exception(writer) :
 	# signature = hash(analyze_error_id(default="") + "-" + file_sha256(default="") + "-" + timestamp_long + "-" + random_number_length8)
 	tmp_original = writer.getInf("analyze_error_id", "err") + "-" + writer.getInf("file_sha256", "sha256") + "-" + str(time.time()) + "-" + str(random.randrange(10000000, 99999999))
-	tmp_hash = hashlib.sha512(tmp_original).hexdigest()
+	tmp_hash = hashlib.sha512(tmp_original.encode()).hexdigest()
 	return tmp_hash
 
 def __persist_file(writer, args) :
