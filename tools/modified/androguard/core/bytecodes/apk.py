@@ -23,7 +23,7 @@ from tools.modified.androguard.util import read
 
 from tools.modified.androguard.core.resources import public
 
-import StringIO
+from io import StringIO
 from struct import pack, unpack
 from xml.sax.saxutils import escape
 from zlib import crc32
