@@ -1,9 +1,9 @@
 from PySide import QtCore, QtGui
 
-from tools.modified.androguard.core import androconf
-from tools.modified.androguard.gui.xrefwindow import XrefDialogClass
-from tools.modified.androguard.gui.sourcewindow import SourceWindow
-from tools.modified.androguard.gui.helpers import classdot2class, Signature
+from androguard.core import androconf
+from androguard.gui.xrefwindow import XrefDialogClass
+from androguard.gui.sourcewindow import SourceWindow
+from androguard.gui.helpers import classdot2class, Signature
 
 class TreeWindow(QtGui.QTreeWidget):
     def __init__(self, parent=None, win=None, session=None):
