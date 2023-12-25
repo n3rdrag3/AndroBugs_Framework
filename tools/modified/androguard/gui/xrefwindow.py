@@ -216,14 +216,14 @@ class XrefDialog(QtGui.QDialog):
 
         xref_items = element.XREFfrom.items
         androconf.debug("%d XREFs found" % len(xref_items))
-#        print xref_items
+#        print(xref_items)
         xrefs = []
         for xref_item in xref_items:
             class_ = xref_item[0].get_class_name()
             method_ = xref_item[0].get_name()
             descriptor_ = xref_item[0].get_descriptor()
             xrefs.append(classmethod2display(class_, method_, descriptor_))
-#        print xrefs
+#        print(xrefs)
         return xrefs
 
 class XrefListView(QtGui.QWidget):
