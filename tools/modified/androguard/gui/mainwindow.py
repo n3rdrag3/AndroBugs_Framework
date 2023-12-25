@@ -1,13 +1,13 @@
 from PySide import QtCore, QtGui
 
-from tools.modified.androguard.session import Session
-from tools.modified.androguard.core import androconf
-from tools.modified.androguard.gui.fileloading import FileLoadingThread
-from tools.modified.androguard.gui.treewindow import TreeWindow
-from tools.modified.androguard.gui.sourcewindow import SourceWindow
-from tools.modified.androguard.gui.stringswindow import StringsWindow
+from androguard.session import Session
+from androguard.core import androconf
+from androguard.gui.fileloading import FileLoadingThread
+from androguard.gui.treewindow import TreeWindow
+from androguard.gui.sourcewindow import SourceWindow
+from androguard.gui.stringswindow import StringsWindow
 
-from tools.modified.androguard.gui.helpers import class2func
+from androguard.gui.helpers import class2func
 
 import os
 
