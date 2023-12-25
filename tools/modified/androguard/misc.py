@@ -1,14 +1,14 @@
-from tools.modified.androguard.core import *
-from tools.modified.androguard.core.androgen import *
-from tools.modified.androguard.core.bytecode import *
-from tools.modified.androguard.core.bytecodes.dvm import *
-from tools.modified.androguard.core.bytecodes.apk import *
-from tools.modified.androguard.core.analysis.analysis import *
-from tools.modified.androguard.core.analysis.ganalysis import *
-from tools.modified.androguard.decompiler.decompiler import *
+from androguard.core import *
+from androguard.core.androgen import *
+from androguard.core.bytecode import *
+from androguard.core.bytecodes.dvm import *
+from androguard.core.bytecodes.apk import *
+from androguard.core.analysis.analysis import *
+from androguard.core.analysis.ganalysis import *
+from androguard.decompiler.decompiler import *
 
 from cPickle import dumps, loads
-from tools.modified.androguard.core import androconf
+from androguard.core import androconf
 
 def save_session(l, filename):
   """
