@@ -1034,7 +1034,7 @@ class StringBlock(object):
 
         for i in range(0, length):
             t_data = pack("=b", self.m_strings[offset + i])
-            data += unicode(t_data, errors='ignore')
+            data += str(t_data, errors='ignore')
             if data[-2:] == "\x00\x00":
                 break
 
@@ -1042,16 +1042,16 @@ class StringBlock(object):
         if end_zero != -1:
             data = data[:end_zero]
 
-        return data.decode("utf-16", 'replace')
+        return data
 
     def decode2(self, array, offset, length):
         data = ""
 
         for i in range(0, length):
             t_data = pack("=b", self.m_strings[offset + i])
-            data += unicode(t_data, errors='ignore')
+            data += str(t_data, errors='ignore')
 
-        return data.decode("utf-8", 'replace')
+        return data
 
     def getVarint(self, array, offset):
         val = array[offset]
@@ -1171,7 +1171,7 @@ class AXMLParser(object):
                 if chunkSize < 8 or chunkSize % 4 != 0:
                     androconf.warning("Invalid chunk size")
 
-                for i in range(0, chunkSize / 4 - 2):
+                for i in range(0, chunkSize // 4 - 2):
                     self.m_resourceIDs.append(unpack('<L', self.buff.read(4))[0])
 
                 continue
@@ -1309,7 +1309,7 @@ class AXMLParser(object):
         if self.m_event != START_TAG:
             return -1
 
-        return len(self.m_attributes) / ATTRIBUTE_LENGHT
+        return len(self.m_attributes) // ATTRIBUTE_LENGHT
 
     def getAttributePrefix(self, index):
         offset = self.getAttributeOffset(index)
