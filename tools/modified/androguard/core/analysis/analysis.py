@@ -15,7 +15,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import re, random, cPickle, collections
+import re
+import random
+import pickle as cPickle
+import collections
 
 from tools.modified.androguard.core.androconf import error, warning, debug, is_ascii_problem,\
     load_api_specific_resource_module
@@ -2173,7 +2176,7 @@ SIGNATURES = {
                 SIGNATURE_HEX : {},
             }
 
-from sign import Signature
+from tools.modified.androguard.core.analysis.sign import Signature
 
 class StringAnalysis(object):
     def __init__(self, value):
