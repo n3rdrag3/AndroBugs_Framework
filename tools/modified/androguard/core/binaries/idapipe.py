@@ -55,7 +55,7 @@ class BasicBlock(object):
 
     def show(self):
         for i in self.ins:
-            print i
+            print(i)
 
 class Function(object):
     def __init__(self, name, start_ea, instructions, information):
@@ -90,7 +90,7 @@ def run_ida(idapath, wrapper_init_path, binpath):
     if pid == 0:
         wrapper_path = "-S" + wrapper_init_path
         l = [ idapath, "-A", wrapper_path, binpath ]
-        print l
+        print(l)
         compile = Popen(l, stdout=open('/dev/null', 'w'), stderr=STDOUT)
         stdout, stderr = compile.communicate()
 #        print stdout, stderr
@@ -204,8 +204,8 @@ class IDAPipe(object):
         #print bb_addr, sorted(edges)
 
 def display_function(f):
-    print f, f.name, f.information
+    print(f, f.name, f.information)
 
     for i in f.basic_blocks:
-        print i
+        print(i)
         i.show()
