@@ -183,10 +183,10 @@ class APK(object):
             self.zip = ChilkatZip(self.__raw)
         elif zipmodule == 2:
             from tools.modified.androguard.patch import zipfile
-            self.zip = zipfile.ZipFile(StringIO.StringIO(self.__raw), mode=mode)
+            self.zip = zipfile.ZipFile(StringIO(self.__raw), mode=mode)
         else:
             import zipfile
-            self.zip = zipfile.ZipFile(StringIO.StringIO(self.__raw), mode=mode)
+            self.zip = zipfile.ZipFile(StringIO(self.__raw), mode=mode)
 
         for i in self.zip.namelist():
             if i == "AndroidManifest.xml":
